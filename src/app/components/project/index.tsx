@@ -168,10 +168,11 @@ export function Project(props: IProjectProps) {
           <LinksDetailsContainer>
 
             <LinksDetail>
-              <a href={websiteLink} target="blank" rel="noopener noreferrer">
+              
                 <SmallIcon>
                 <FontAwesomeIcon icon={faExternalLinkAlt} />
-                </SmallIcon></a>
+                </SmallIcon>
+                <LinksInfo><a href={websiteLink} target="blank" rel="noopener noreferrer"></a></LinksInfo>
             </LinksDetail>
 
             <LinksDetail>

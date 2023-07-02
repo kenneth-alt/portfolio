@@ -86,7 +86,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "WaitEase", 
     summary: "Responsive fullstack business website for a Queue Management Application using Python Flask, Bootstrap, custom CSS, and MySQL.", 
     features: "Features: Registration, Authentication, Password Encryption, Admin Dashboard, Barcode generation, realtime position update.",
-    websiteLink: "#", 
+    websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt/wait-ease-v1",
   };
 
@@ -95,7 +95,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "everychildplays", 
     summary: "Fullstack MERN pplication consuming a third party API to build a directory of all inclusive playgrounds in the city of Calgary.", 
     features: "Features: Registration, Authentication, Password Encryption, Session management, Maps and directions, Reviews.",
-    websiteLink: "#", 
+    websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt/everychildplays",
   };
 
@@ -104,7 +104,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "YYC-Aero", 
     summary: "Responsive fullstack business website using React.js, GraphQL, Typescript, Tailwindcss, Express.js, Nest.js, TypeORM, Docker.", 
     features: "",
-    websiteLink: "#", 
+    websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt/calgary-aero-full-stack",
   };
 
@@ -113,7 +113,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "AWS Fullstack Deployment", 
     summary: "Project to demonstrate deployment of a fullstack web application with Python Flask backend and React frontend on AWS cloud. ", 
     features: "Features: Deployment, Docker, Authentication, Routing, Loadbalancing and Caching.",
-    websiteLink: "#", 
+    websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt/aws-bootcamp-cruddur-2023",
   };
 
@@ -122,7 +122,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "Wendy AI", 
     summary: "Project to demonstrate deployment of a fullstack AI Application in AWS cloud, using LangChain, Vector databases, OpenAI, GoodData, React, Typescript, Tailwind.", 
     features: "Features: API first approach, Analtyics as code, SSO",
-    websiteLink: "#", 
+    websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt",
   };
 
