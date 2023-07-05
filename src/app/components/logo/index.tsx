@@ -35,7 +35,7 @@ const Image = styled.div`
 export function Logo() {
   return (
     <LogoContainer>
-      <a href="/">
+      <a href="/portfolio">
         <LogoText>&lt;Kenneth /&gt;</LogoText>
       </a>
     </LogoContainer>
