@@ -17,6 +17,9 @@ const LogoText = styled.div`
     text-black
     m-1
   `}
+  &:hover {
+    color: orange;
+  }
 `;
 
 const Image = styled.div`
@@ -32,7 +35,9 @@ const Image = styled.div`
 export function Logo() {
   return (
     <LogoContainer>
-      <LogoText>&lt;Kenneth /&gt;</LogoText>
+      <a href="/">
+        <LogoText>&lt;Kenneth /&gt;</LogoText>
+      </a>
     </LogoContainer>
   ) 
 }
