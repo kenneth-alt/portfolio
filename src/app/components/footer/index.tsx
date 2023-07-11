@@ -160,6 +160,11 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
 
     // Form is valid, proceed with email sending
     sendEmail();
+
+    // Reset form inputs after successful submission
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   const sendEmail = () => {
