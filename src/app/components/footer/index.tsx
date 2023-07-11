@@ -171,7 +171,7 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
   
     emailjs.send("service_4fd7ty9", "template_ikz5lep", params, "_UyzTNpPZikFOjrvP")
       .then((res) => {
-        setResponseMessage("Message successfully sent");
+        setResponseMessage("Message successfully sent! I'll be in touch with you shortly.");
       })
       .catch((error) => {
         setResponseMessage("Error! Server is unable to send message. Please try again later.");
