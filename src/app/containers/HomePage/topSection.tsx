@@ -105,8 +105,7 @@ const Description = styled.p`
     sm:max-h-full
     overflow-hidden
     max-h-20
-    text-gray-600
-    
+    text-gray-600 
   `};
 `;
 
