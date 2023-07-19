@@ -11,8 +11,6 @@ import { TopProjects } from "./myProjects";
 import { Footer } from "../../components/footer";
 
 
-
-
 const PageContainer = styled.div`
 	${tw`
 		flex

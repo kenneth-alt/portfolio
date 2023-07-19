@@ -61,7 +61,17 @@ const InputContainer = styled.div`
   `};
 `;
 
+const NameEmailContainer = styled.div`
+  ${tw`
+    flex
+    flex-col
+    w-full
+    mb-1
+  `};
+`;
+
 const Input = styled.input`
+  font-size: 14px;
   ${tw`
    flex-1
    rounded-md
@@ -81,6 +91,7 @@ const TextAreaContainer = styled.div`
 `;
 
 const TextArea = styled.textarea`
+font-size: 14px;
   ${tw`
     w-full
     rounded-md
@@ -195,23 +206,28 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
         <FormContainer>
           <form onSubmit={handleSubmit}>
             <InputContainer>
-              <Input
-                type="text"
-                id="name"
-                placeholder="Name"
-                value={name}
-                onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setName(e.target.value)}
-              />
-              <Input
-                type="email"
-                id="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setEmail(e.target.value)}
-              />
+              <NameEmailContainer>
+                <Input
+                  type="text"
+                  id="name"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setName(e.target.value)}
+                />
+                {nameError && <div className="text-red-500 text-xs pl-2">{nameError}</div>}
+              </NameEmailContainer>
+              <NameEmailContainer>
+                <Input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setEmail(e.target.value)}
+                />
+                {emailError && <div className="text-red-500 text-xs pl-2">{emailError}</div>}
+              </NameEmailContainer>
             </InputContainer>
-              {nameError && <div className="text-red-500 text-xs pl-2">{nameError}</div>}
-              {emailError && <div className="text-red-500 text-xs pl-2">{emailError}</div>}
+              
             <TextAreaContainer>
               <TextArea
                 name="message"
