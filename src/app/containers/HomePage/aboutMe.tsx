@@ -89,7 +89,7 @@ export const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
       <InfoContainer>
         <Title>My Story: Innovating Bits and Bytes</Title>
         <InfoText>
-          After 4 years of experience working on engineering projects, I made a career transition to Software development, DevOps and cloud computing in 2019, giving me the opportunity to finally explore my deeply-rooted interest in technology that had remained latent until then. I am super passionate about technology and problem-solving, and have a lifelong learning attitude as a personal culture.
+          After 4 years of experience working on engineering projects, I made a career transition to Software development, DevOps and cloud computing in 2018, giving me the opportunity to finally explore my deeply-rooted interest in technology that had remained latent until then. I am super passionate about technology and problem-solving, and have a lifelong learning attitude as a personal culture.
         </InfoText>
         <InfoText>
           My programming expertise includes JavaScript, Node.js, React, Express, MongoDB, Python, Flask, and MySQL. I have hands-on DevOps experience working with CI/CD pielines, cloud services, Docker, Kubernetes, and RESTful APIs. Additionally, I have a strong understanding of AWS and Azure cloud ecosystems, and I am proficient in infrastructure as code using Terraform and CloudFormation, configuration management with Ansible and scripting and automation using Bash and Python.
