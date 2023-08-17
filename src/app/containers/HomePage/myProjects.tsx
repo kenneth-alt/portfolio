@@ -118,7 +118,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   const wendyAi: IProject = {
-    imgSrc: "https://i.postimg.cc/vHy9MnqY/05-wendy-ai.png", 
+    imgSrc: "https://i.postimg.cc/V6BfGnZz/wendyimages.png", 
     name: "Wendy AI", 
     summary: "Project to demonstrate deployment of a fullstack AI Application in AWS cloud, using LangChain, Vector databases, OpenAI, GoodData, React, Typescript, Tailwind.", 
     features: "Features: API first approach, Analtyics as code, SSO",
