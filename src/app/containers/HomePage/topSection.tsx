@@ -205,7 +205,7 @@ export const TopSection = forwardRef<HTMLDivElement>((props, ref) => {
           <Greeting>Hi, I am</Greeting>
           <MyName>Kenneth Ugo</MyName>
           <Description>
-            Solution oriented <strong>Fullstack Developer</strong> and <strong>DevOps Engineer</strong>
+            Solution oriented <strong>Software Developer</strong> and <strong>DevOps Engineer</strong>
           </Description>
         </div>
         <SocialsContainer>
