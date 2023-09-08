@@ -120,8 +120,8 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
   const AiArticleSummarizer: IProject = {
     imgSrc: "https://i.postimg.cc/7hFbNqdy/ai-summarizer.png", 
     name: "Sumz", 
-    summary: "AI assistant that summarizes an article, OpenAI's GPT-4 API, React, Redux Toolkit, Tailwind, Next.js, .", 
-    features: "Features: Rest API, ",
+    summary: "AI assistant that summarizes an article, OpenAI's GPT-4 API, React, Redux Toolkit, Tailwind, and Next.js.", 
+    features: "Features: Rest API calling, Redux state management.",
     websiteLink: "", 
     githubLink: "https://github.com/kenneth-alt/React-RTK-AI-article-summarizer",
   };
