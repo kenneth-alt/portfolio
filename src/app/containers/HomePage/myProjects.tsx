@@ -99,15 +99,6 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     githubLink: "https://github.com/kenneth-alt/everychildplays",
   };
 
-  const yycAero: IProject = {
-    imgSrc: "https://i.postimg.cc/BQ6vnDbx/01-yyc-aero.png", 
-    name: "YYC-Aero", 
-    summary: "Responsive fullstack business website using React.js, GraphQL, Typescript, Tailwindcss, Express.js, Nest.js, TypeORM, Docker.", 
-    features: "",
-    websiteLink: "", 
-    githubLink: "https://github.com/kenneth-alt/calgary-aero-full-stack",
-  };
-
   const awsDeployment: IProject = {
     imgSrc: "https://i.postimg.cc/Vv11hzYR/02-AWS-cruddur.png", 
     name: "AWS Fullstack Deployment", 
@@ -123,15 +114,35 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     summary: "Project to demonstrate deployment of a fullstack AI Application in AWS cloud, using LangChain, Vector databases, OpenAI, GoodData, React, Typescript, Tailwind.", 
     features: "Features: API first approach, Analtyics as code, SSO",
     websiteLink: "", 
-    githubLink: "https://github.com/kenneth-alt",
+    githubLink: "https://github.com/kenneth-alt/wendyAI",
+  };
+
+  const AiArticleSummarizer: IProject = {
+    imgSrc: "https://i.postimg.cc/7hFbNqdy/ai-summarizer.png", 
+    name: "Sumz", 
+    summary: "AI assistant that summarizes an article, OpenAI's GPT-4 API, React, Redux Toolkit, Tailwind, Next.js, .", 
+    features: "Features: Rest API, ",
+    websiteLink: "", 
+    githubLink: "https://github.com/kenneth-alt/React-RTK-AI-article-summarizer",
+  };
+
+  const yycAero: IProject = {
+    imgSrc: "https://i.postimg.cc/BQ6vnDbx/01-yyc-aero.png", 
+    name: "YYC-Aero", 
+    summary: "Responsive fullstack business website using React.js, GraphQL, Typescript, Tailwindcss, Express.js, Nest.js, TypeORM, Docker.", 
+    features: "",
+    websiteLink: "", 
+    githubLink: "https://github.com/kenneth-alt/calgary-aero-full-stack",
   };
 
   const projects = [
     <Project {...WaitEase} />,
     <Project {...everychildplays} />,
-    <Project {...yycAero} />, 
     <Project {...awsDeployment} />,
     <Project {...wendyAi} />, 
+    <Project {...AiArticleSummarizer} />, 
+    <Project {...yycAero} />, 
+
   ];
 
   const numberOfDots = isMobile ? projects.length : Math.ceil(projects.length / 3);
