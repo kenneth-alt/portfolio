@@ -86,17 +86,17 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     name: "WaitEase", 
     summary: "Responsive fullstack business website for a Queue Management Application using Python Flask, Bootstrap, custom CSS, and MySQL.", 
     features: "Features: Registration, Authentication, Password Encryption, Admin Dashboard, Barcode generation, realtime position update.",
-    websiteLink: "", 
+    websiteLink: "https://wait-ease-production.up.railway.app/", 
     githubLink: "https://github.com/kenneth-alt/wait-ease-v1",
   };
 
-  const everychildplays: IProject = {
-    imgSrc: "https://i.postimg.cc/rFKtY71X/03-everychildplays.png", 
-    name: "everychildplays", 
-    summary: "Fullstack MERN pplication consuming a third party API to build a directory of all inclusive playgrounds in the city of Calgary.", 
-    features: "Features: Registration, Authentication, Password Encryption, Session management, Maps and directions, Reviews.",
-    websiteLink: "", 
-    githubLink: "https://github.com/kenneth-alt/everychildplays",
+    const wendyAi: IProject = {
+    imgSrc: "https://i.postimg.cc/V6BfGnZz/wendyimages.png", 
+    name: "Wendy AI", 
+    summary: "Project to demonstrate deployment of a fullstack AI Application in AWS cloud, using LangChain, Vector databases, OpenAI, GoodData, React, Typescript, Tailwind.", 
+    features: "Features: API first approach, Analtyics as code, SSO",
+    websiteLink: "https://wendyai.ollysamm.com/", 
+    githubLink: "https://github.com/kenneth-alt/wendyAI",
   };
 
   const awsDeployment: IProject = {
@@ -108,13 +108,13 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     githubLink: "https://github.com/kenneth-alt/aws-bootcamp-cruddur-2023",
   };
 
-  const wendyAi: IProject = {
-    imgSrc: "https://i.postimg.cc/V6BfGnZz/wendyimages.png", 
-    name: "Wendy AI", 
-    summary: "Project to demonstrate deployment of a fullstack AI Application in AWS cloud, using LangChain, Vector databases, OpenAI, GoodData, React, Typescript, Tailwind.", 
-    features: "Features: API first approach, Analtyics as code, SSO",
+    const everychildplays: IProject = {
+    imgSrc: "https://i.postimg.cc/rFKtY71X/03-everychildplays.png", 
+    name: "everychildplays", 
+    summary: "Fullstack MERN pplication consuming a third party API to build a directory of all inclusive playgrounds in the city of Calgary.", 
+    features: "Features: Registration, Authentication, Password Encryption, Session management, Maps and directions, Reviews.",
     websiteLink: "", 
-    githubLink: "https://github.com/kenneth-alt/wendyAI",
+    githubLink: "https://github.com/kenneth-alt/everychildplays",
   };
 
   const AiArticleSummarizer: IProject = {
@@ -137,9 +137,9 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
 
   const projects = [
     <Project {...WaitEase} />,
-    <Project {...everychildplays} />,
-    <Project {...awsDeployment} />,
     <Project {...wendyAi} />, 
+    <Project {...awsDeployment} />,
+    <Project {...everychildplays} />,
     <Project {...AiArticleSummarizer} />, 
     <Project {...yycAero} />, 
 
