@@ -99,6 +99,15 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     githubLink: "https://github.com/kenneth-alt/wendyAI",
   };
 
+  const azureDeployment: IProject = {
+    imgSrc: "https://i.postimg.cc/zvJ9K2KN/azure-architectute-java-app.png", 
+    name: "Azure App Deployment", 
+    summary: "CI/CD deployement of Azure App Service & Azure Kubernetes Service using Azure DevOps Pipelines and GitHub Actions.", 
+    features: "Features: B2C Authentication, Blue/Green deployment, Azure Serverless.",
+    websiteLink: "#", 
+    githubLink: "https://github.com/kenneth-alt/Azure-Architecture-Java-App-Deployment",
+  };
+
   const awsDeployment: IProject = {
     imgSrc: "https://i.postimg.cc/Vv11hzYR/02-AWS-cruddur.png", 
     name: "AWS Fullstack Deployment", 
@@ -138,6 +147,7 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
   const projects = [
     <Project {...WaitEase} />,
     <Project {...wendyAi} />, 
+    <Project {...azureDeployment} />,
     <Project {...awsDeployment} />,
     <Project {...everychildplays} />,
     <Project {...AiArticleSummarizer} />, 
