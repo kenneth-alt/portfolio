@@ -81,6 +81,15 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
+  const Clima: IProject = {
+    imgSrc: "https://i.postimg.cc/CKT5P5n1/clima1.png", 
+    name: "Clima", 
+    summary: "Mobile first responsive weather app built in HTML, CSS and vanilla JavaScript, uisng the OpenWeatherMap API", 
+    features: "Features: async/await, fetch, geolcation API, persistent data storage, serverless functions",
+    websiteLink: "https://marvelous-tulumba-12d425.netlify.app/", 
+    githubLink: "https://github.com/kenneth-alt/clima",
+  };
+
   const WaitEase: IProject = {
     imgSrc: "https://i.postimg.cc/QddYP86N/04-waitease.png", 
     name: "WaitEase", 
