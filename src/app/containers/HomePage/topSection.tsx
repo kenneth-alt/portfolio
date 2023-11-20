@@ -6,6 +6,7 @@ import TopSectionImg from "../../../assets/img/SuperCoder.png";
 import BlobImg from "../../../assets/img/blob.svg"
 import LinkedIn from "../../../assets/img/linkedin.png"
 import GitHub from "../../../assets/img/github.png"
+import Medium from "../../../assets/img/medium.png"
 import { SCREENS } from "../../components/responsive";
 
 const bounceAnimation = keyframes`
@@ -211,6 +212,7 @@ export const TopSection = forwardRef<HTMLDivElement>((props, ref) => {
         <SocialsContainer>
           <a href="https://www.linkedin.com/in/kenneth-ugo" target="blank" rel="noopener noreferrer"><img src={LinkedIn} /></a>
           <a href="https://github.com/kenneth-alt" target="blank" rel="noopener noreferrer"><img src={GitHub} /></a>
+          <a href="https://medium.com/@kenneth-alt" target="blank" rel="noopener noreferrer"><img src={Medium} /></a>
         </SocialsContainer>
       </LeftContainer>
       <RightContainer>
