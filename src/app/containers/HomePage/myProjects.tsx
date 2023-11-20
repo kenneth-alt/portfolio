@@ -52,32 +52,11 @@ const DotsContainer = styled.div`
   `};
 `;
 
-const EmptyCars = styled.div`
-  ${tw`
-    w-full
-    flex
-    justify-center
-    items-center
-    text-sm
-    text-gray-500
-  `};
-`;
-
-const LoadingContainer = styled.div`
-  ${tw`
-    w-full
-    mt-9
-    flex
-    justify-center
-    items-center
-    text-base
-    text-black
-  `};
-`;
 
 
 export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
-  const [current, setCurrent] = useState(0);
+  const [devCurrent, setDevCurrent] = useState(0);
+  const [devopsCurrent, setDevopsCurrent] = useState(0);
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
@@ -153,28 +132,33 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
     githubLink: "https://github.com/kenneth-alt/calgary-aero-full-stack",
   };
 
-  const projects = [
+  const devProjects = [
     <Project {...Clima} />,
     <Project {...WaitEase} />,
     <Project {...wendyAi} />, 
-    <Project {...azureDeployment} />,
-    <Project {...awsDeployment} />,
     <Project {...everychildplays} />,
     <Project {...AiArticleSummarizer} />, 
     <Project {...yycAero} />, 
-
   ];
 
-  const numberOfDots = isMobile ? projects.length : Math.ceil(projects.length / 3);
+  const devopsProjects = [
+    <Project {...azureDeployment} />,
+    <Project {...awsDeployment} />,
+  ];
+
+  const numberOfDevDots = isMobile ? devProjects.length : Math.ceil(devProjects.length / 3);
+
+  const numberOfDevopsDots = isMobile ? devopsProjects.length : Math.ceil(devopsProjects.length / 3);
 
   return (
     <TopProjectsContainer ref={ref}>
       <Title>Explore My Latest Projects</Title>
       <ProjectsContainer>
+        Software Development 
         <Carousel
-          value={current}
-          onChange={setCurrent}
-          slides={projects}
+          value={devCurrent}
+          onChange={setDevCurrent}
+          slides={devProjects}
           plugins={[
             "clickToChange",
             {
@@ -208,7 +192,50 @@ export const TopProjects = forwardRef<HTMLDivElement>((props, ref) => {
           }}
         />
         <DotsContainer>
-          <Dots value={current} onChange={setCurrent} number={numberOfDots} />
+          <Dots value={devCurrent} onChange={setDevCurrent} number={numberOfDevDots} />
+        </DotsContainer>
+      </ProjectsContainer>
+
+      <ProjectsContainer>
+        DevOps and Infrastructure
+        <Carousel
+          value={devopsCurrent}
+          onChange={setDevopsCurrent}
+          slides={devopsProjects}
+          plugins={[
+            "clickToChange",
+            {
+              resolve: slidesToShowPlugin,
+              options: {
+                numberOfSlides: 3,
+              },
+            },
+          ]}
+          breakpoints={{
+            640: {
+              plugins: [
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 1,
+                  },
+                },
+              ],
+            },
+            900: {
+              plugins: [
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 2,
+                  },
+                },
+              ],
+            },
+          }}
+        />
+        <DotsContainer>
+          <Dots value={devopsCurrent} onChange={setDevopsCurrent} number={numberOfDevopsDots} />
         </DotsContainer>
       </ProjectsContainer>
     </TopProjectsContainer>

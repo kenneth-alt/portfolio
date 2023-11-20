@@ -37,6 +37,7 @@ const BlogsContainer = styled.div`
     justify-center
     mt-7
     md:mt-10
+    mb-14
   `};
 `;
 
