@@ -12,6 +12,7 @@ interface NavItemsProps {
   aboutRef: React.RefObject<HTMLDivElement>;
   skillsRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
+  blogsRef: React.RefObject<HTMLDivElement>;
   contactRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -71,7 +72,7 @@ const ButtonsContainer = styled.div`
 
 
 
-export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, contactRef }: NavItemsProps) {
+export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, blogsRef, contactRef}: NavItemsProps) {
   
   const handleNavItemClick = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -96,6 +97,9 @@ export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, contactRef
             <NavItem menu onClick={() => handleNavItemClick(projectsRef)}>
               Projects
             </NavItem>
+            <NavItem menu onClick={() => handleNavItemClick(blogsRef)}>
+              Blogs
+            </NavItem>
           </ListContainer>
           <ButtonsContainer onClick={() => handleNavItemClick(contactRef)}>
             <Button theme="filled" text="Contact" />
@@ -118,6 +122,9 @@ export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, contactRef
         </NavItem>
         <NavItem onClick={() => handleNavItemClick(projectsRef)}>
           Projects
+        </NavItem>
+        <NavItem onClick={() => handleNavItemClick(blogsRef)}>
+          Blogs
         </NavItem>
       </ListContainer>
       <ButtonsContainer onClick={() => handleNavItemClick(contactRef)}>

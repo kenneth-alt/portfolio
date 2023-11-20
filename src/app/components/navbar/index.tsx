@@ -9,6 +9,7 @@ interface NavbarProps {
   aboutRef: React.RefObject<HTMLDivElement>;
   skillsRef: React.RefObject<HTMLDivElement>;
   projectsRef: React.RefObject<HTMLDivElement>;
+  blogsRef: React.RefObject<HTMLDivElement>;
   contactRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -32,13 +33,13 @@ const NavbarContainer = styled.div`
 
 const LogoContainer = styled.div``;
 
-export function Navbar({ homeRef, aboutRef, skillsRef, projectsRef, contactRef }: NavbarProps) {
+export function Navbar({ homeRef, aboutRef, skillsRef, projectsRef, blogsRef, contactRef }: NavbarProps) {
   return (
     <NavbarContainer>
       <LogoContainer>
         <Logo />
       </LogoContainer>
-      <NavItems homeRef={homeRef} aboutRef={aboutRef} skillsRef={skillsRef} projectsRef={projectsRef} contactRef={contactRef} />
+      <NavItems homeRef={homeRef} aboutRef={aboutRef} skillsRef={skillsRef} projectsRef={projectsRef} blogsRef={blogsRef} contactRef={contactRef} />
     </NavbarContainer>
   )
 }
