@@ -1,8 +1,9 @@
 import React from 'react';
 import './index.css';
 import styled from 'styled-components';
-import tw from "twin.macro";
+import tw from 'twin.macro';
 import { HomePage } from './app/containers/HomePage';
+import { NavigationProvider } from './app/context/NavigationContext';
 
 const AppContainer = styled.div`
   ${tw`
@@ -15,10 +16,12 @@ const AppContainer = styled.div`
 
 function App() {
   return (
-    <AppContainer>
-      <HomePage />
-    </AppContainer>
-  )
+    <NavigationProvider>
+      <AppContainer>
+        <HomePage />
+      </AppContainer>
+    </NavigationProvider>
+  );
 }
 
 export default App;

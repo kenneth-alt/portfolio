@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
-import { Logo } from "../logo";
-import { NavItems } from "./navItems";
-
-interface NavbarProps {
-  homeRef: React.RefObject<HTMLDivElement>;
-  aboutRef: React.RefObject<HTMLDivElement>;
-  skillsRef: React.RefObject<HTMLDivElement>;
-  projectsRef: React.RefObject<HTMLDivElement>;
-  blogsRef: React.RefObject<HTMLDivElement>;
-  contactRef: React.RefObject<HTMLDivElement>;
-}
+import React from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { Logo } from '../logo';
+import { NavItems } from './navItems';
 
 const NavbarContainer = styled.div`
   min-height: 68px;
@@ -27,19 +18,19 @@ const NavbarContainer = styled.div`
   `}
   position: sticky;
   top: 0;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
   z-index: 999;
 `;
 
 const LogoContainer = styled.div``;
 
-export function Navbar({ homeRef, aboutRef, skillsRef, projectsRef, blogsRef, contactRef }: NavbarProps) {
+export function Navbar() {
   return (
     <NavbarContainer>
       <LogoContainer>
         <Logo />
       </LogoContainer>
-      <NavItems homeRef={homeRef} aboutRef={aboutRef} skillsRef={skillsRef} projectsRef={projectsRef} blogsRef={blogsRef} contactRef={contactRef} />
+      <NavItems />
     </NavbarContainer>
-  )
+  );
 }

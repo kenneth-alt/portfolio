@@ -1,20 +1,12 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import tw from "twin.macro";
-import { slide as Menu } from "react-burger-menu";
-import { useMediaQuery } from "react-responsive";
-import { SCREENS } from "../responsive";
-import menuStyles from "./menuStyles";
-import { Button } from "../../components/button";
-
-interface NavItemsProps {
-  homeRef: React.RefObject<HTMLDivElement>;
-  aboutRef: React.RefObject<HTMLDivElement>;
-  skillsRef: React.RefObject<HTMLDivElement>;
-  projectsRef: React.RefObject<HTMLDivElement>;
-  blogsRef: React.RefObject<HTMLDivElement>;
-  contactRef: React.RefObject<HTMLDivElement>;
-}
+import React from 'react';
+import { useNavigationContext } from '../../context/NavigationContext';
+import styled, { css } from 'styled-components';
+import tw from 'twin.macro';
+import { slide as Menu } from 'react-burger-menu';
+import { useMediaQuery } from 'react-responsive';
+import { SCREENS } from '../responsive';
+import menuStyles from './menuStyles';
+import { Button } from '../../components/button';
 
 const NavItemsContainer = styled.div`
   ${tw`
@@ -48,8 +40,8 @@ const NavItem = styled.li<{ menu?: any }>`
     hover:text-orange-500
   `};
 
-  ${({ menu }) => 
-    menu && 
+  ${({ menu }) =>
+    menu &&
     css`
       ${tw`
         text-orange-100
@@ -57,7 +49,7 @@ const NavItem = styled.li<{ menu?: any }>`
         mb-3
         focus:text-orange-100
       `};
-  `};
+    `};
   &:hover {
     color: orange;
   }
@@ -70,13 +62,13 @@ const ButtonsContainer = styled.div`
   `};
 `;
 
+export function NavItems() {
+  const { homeRef, aboutRef, skillsRef, projectsRef, blogsRef, contactRef } =
+    useNavigationContext();
 
-
-export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, blogsRef, contactRef}: NavItemsProps) {
-  
   const handleNavItemClick = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  };
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
@@ -106,30 +98,22 @@ export function NavItems({ homeRef, aboutRef, skillsRef, projectsRef, blogsRef, 
           </ButtonsContainer>
         </NavItemsContainer>
       </Menu>
-    )
+    );
 
   return (
     <NavItemsContainer>
       <ListContainer>
-        <NavItem onClick={() => handleNavItemClick(homeRef)}>
-          Home
-        </NavItem>
-        <NavItem onClick={() => handleNavItemClick(aboutRef)}>
-          About
-        </NavItem>
-        <NavItem onClick={() => handleNavItemClick(skillsRef)}>
-          Skills
-        </NavItem>
+        <NavItem onClick={() => handleNavItemClick(homeRef)}>Home</NavItem>
+        <NavItem onClick={() => handleNavItemClick(aboutRef)}>About</NavItem>
+        <NavItem onClick={() => handleNavItemClick(skillsRef)}>Skills</NavItem>
         <NavItem onClick={() => handleNavItemClick(projectsRef)}>
           Projects
         </NavItem>
-        <NavItem onClick={() => handleNavItemClick(blogsRef)}>
-          Blogs
-        </NavItem>
+        <NavItem onClick={() => handleNavItemClick(blogsRef)}>Blogs</NavItem>
       </ListContainer>
       <ButtonsContainer onClick={() => handleNavItemClick(contactRef)}>
         <Button theme="filled" text="Contact" />
       </ButtonsContainer>
     </NavItemsContainer>
-  )  
+  );
 }
