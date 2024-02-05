@@ -1,7 +1,7 @@
-import React, { useState, forwardRef } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
-
+import React from 'react';
+import { useNavigationContext } from '../../context/NavigationContext';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const TopBlogsContainer = styled.div`
   ${tw`
@@ -47,14 +47,12 @@ const DotsContainer = styled.div`
   `};
 `;
 
-
-export const BlogSection = forwardRef<HTMLDivElement>((props, ref) => {
+export const BlogSection = () => {
+  const { blogsRef } = useNavigationContext();
   return (
-    <TopBlogsContainer ref={ref}>
+    <TopBlogsContainer ref={blogsRef}>
       <Title>Blogs: Navigating the Digital Odyssey</Title>
-      <BlogsContainer>
-        Coming soon...
-      </BlogsContainer>
+      <BlogsContainer>Coming soon...</BlogsContainer>
     </TopBlogsContainer>
-  )
-});
+  );
+};

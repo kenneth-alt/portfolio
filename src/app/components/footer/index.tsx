@@ -1,10 +1,10 @@
-import React, { useState, forwardRef } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
+import React, { useState } from 'react';
+import { useNavigationContext } from '../../context/NavigationContext';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import emailjs from '@emailjs/browser';
 
-
-import { Button } from "../button"
+import { Button } from '../button';
 
 const FooterContainer = styled.div`
   //min-height: 24em;
@@ -49,7 +49,6 @@ const FormContainer = styled.div`
     flex
     flex-col
   `};
-  
 `;
 
 const InputContainer = styled.div`
@@ -91,7 +90,7 @@ const TextAreaContainer = styled.div`
 `;
 
 const TextArea = styled.textarea`
-font-size: 14px;
+  font-size: 14px;
   ${tw`
     w-full
     rounded-md
@@ -99,7 +98,6 @@ font-size: 14px;
     p-1
     mb-3
   `};
-  
 `;
 
 const BottomContainer = styled.div`
@@ -128,40 +126,39 @@ const CopyrightText = styled.small`
   `}
 `;
 
-
-export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [messageError, setMessageError] = useState("");
-  const [responseMessage, setResponseMessage] = useState("");
+export const Footer = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [messageError, setMessageError] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    
+
     // Clear previous error messages
-    setNameError("");
-    setEmailError("");
-    setMessageError("");
-    setResponseMessage("");
+    setNameError('');
+    setEmailError('');
+    setMessageError('');
+    setResponseMessage('');
 
     let isValid = true;
-    
+
     // Perform form validation here
-    if (name.trim() === "") {
-      setNameError("Please enter your name");
+    if (name.trim() === '') {
+      setNameError('Please enter your name');
       isValid = false;
     }
-  
-    if (email.trim() === "") {
-      setEmailError("Please enter your email");
+
+    if (email.trim() === '') {
+      setEmailError('Please enter your email');
       isValid = false;
     }
-  
-    if (message.trim() === "") {
-      setMessageError("Please enter your message");
+
+    if (message.trim() === '') {
+      setMessageError('Please enter your message');
       isValid = false;
     }
 
@@ -173,9 +170,9 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
     sendEmail();
 
     // Reset form inputs after successful submission
-    setName("");
-    setEmail("");
-    setMessage("");
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   const sendEmail = () => {
@@ -184,22 +181,30 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
       email_id: email,
       message: message,
     };
-  
-    emailjs.send("service_4fd7ty9", "template_ikz5lep", params, "_UyzTNpPZikFOjrvP")
+
+    emailjs
+      .send('service_4fd7ty9', 'template_ikz5lep', params, '_UyzTNpPZikFOjrvP')
       .then((res) => {
-        setResponseMessage("Message successfully sent! I'll be in touch with you shortly.");
+        setResponseMessage(
+          "Message successfully sent! I'll be in touch with you shortly."
+        );
       })
       .catch((error) => {
-        setResponseMessage("Error! Server is unable to send message. Please try again later.");
+        setResponseMessage(
+          'Error! Server is unable to send message. Please try again later.'
+        );
       });
   };
 
+  const { contactRef } = useNavigationContext();
+
   return (
-    <FooterContainer ref={ref}>
+    <FooterContainer ref={contactRef}>
       <InnerContainer>
         <FooterTextContainer>
           <FooterText>
-            For inquiries, please contact me by kindly filling out the form below.
+            For inquiries, please contact me by kindly filling out the form
+            below.
           </FooterText>
         </FooterTextContainer>
 
@@ -212,9 +217,13 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
                   id="name"
                   placeholder="Name"
                   value={name}
-                  onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setName(e.target.value)}
+                  onChange={(e: {
+                    target: { value: React.SetStateAction<string> };
+                  }) => setName(e.target.value)}
                 />
-                {nameError && <div className="text-red-500 text-xs pl-2">{nameError}</div>}
+                {nameError && (
+                  <div className="text-red-500 text-xs pl-2">{nameError}</div>
+                )}
               </NameEmailContainer>
               <NameEmailContainer>
                 <Input
@@ -222,12 +231,16 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
                   id="email"
                   placeholder="Email"
                   value={email}
-                  onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setEmail(e.target.value)}
+                  onChange={(e: {
+                    target: { value: React.SetStateAction<string> };
+                  }) => setEmail(e.target.value)}
                 />
-                {emailError && <div className="text-red-500 text-xs pl-2">{emailError}</div>}
+                {emailError && (
+                  <div className="text-red-500 text-xs pl-2">{emailError}</div>
+                )}
               </NameEmailContainer>
             </InputContainer>
-              
+
             <TextAreaContainer>
               <TextArea
                 name="message"
@@ -235,12 +248,27 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
                 rows={5}
                 placeholder="Message"
                 value={message}
-                onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setMessage(e.target.value)}
+                onChange={(e: {
+                  target: { value: React.SetStateAction<string> };
+                }) => setMessage(e.target.value)}
               />
-              {messageError && <div className="text-red-500 text-xs pl-1 pb-2">{messageError}</div>}
+              {messageError && (
+                <div className="text-red-500 text-xs pl-1 pb-2">
+                  {messageError}
+                </div>
+              )}
             </TextAreaContainer>
-            {responseMessage && ( <div className={responseMessage.startsWith("Error") ? "text-red-500 text-xs pl-2 pb-2" : "text-green-500 text-xs pl-2 pb-2"}>
-            {responseMessage} </div> )}
+            {responseMessage && (
+              <div
+                className={
+                  responseMessage.startsWith('Error')
+                    ? 'text-red-500 text-xs pl-2 pb-2'
+                    : 'text-green-500 text-xs pl-2 pb-2'
+                }
+              >
+                {responseMessage}{' '}
+              </div>
+            )}
             <ButtonsContainer>
               <Button theme="filled" text="Send Message" />
             </ButtonsContainer>
@@ -254,4 +282,4 @@ export const Footer = forwardRef<HTMLDivElement>((props, ref) => {
       </InnerContainer>
     </FooterContainer>
   );
-});
+};

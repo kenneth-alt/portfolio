@@ -1,10 +1,11 @@
-import React, { forwardRef } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
+import React from 'react';
+import { useNavigationContext } from '../../context/NavigationContext';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
-import DevSkills from "../../../assets/img/web-development.png"
-import DevOpsSkills from "../../../assets/img/devopsSkill.png"
-import EssentialSkills from "../../../assets/img/essentialSkills.png"
+import DevSkills from '../../../assets/img/web-development.png';
+import DevOpsSkills from '../../../assets/img/devopsSkill.png';
+import EssentialSkills from '../../../assets/img/essentialSkills.png';
 
 const Container = styled.div`
   ${tw`
@@ -52,7 +53,7 @@ const StepContainer = styled.div`
   }
   &:hover {
     cursor: pointer;
-    transform: scale(1.07)
+    transform: scale(1.07);
   }
 `;
 
@@ -68,7 +69,6 @@ const Step = styled.div`
     py-4
   `};
 `;
-
 
 const StepTitle = styled.h4`
   ${tw`
@@ -99,10 +99,10 @@ const StepIcon = styled.span`
 
   `;
 
-
-  export const SkillsSection = forwardRef<HTMLDivElement>((props, ref) => {
+export const SkillsSection = () => {
+  const { skillsRef } = useNavigationContext();
   return (
-    <Container ref={ref}>
+    <Container ref={skillsRef}>
       <Title>My Skills: A man of many hats!</Title>
       <StepsContainer>
         <StepContainer>
@@ -112,33 +112,36 @@ const StepIcon = styled.span`
             </StepIcon>
             <StepTitle>Developer</StepTitle>
             <StepDescription>
-              JavaScript, React, Express, Node.js, MongoDB, Python, Flask, fastapi, MySQL, Agile/Scrum.
+              JavaScript, React, Next.js, Express, Node.js, Nest.js, MongoDB,
+              Python, Flask, fastapi, MySQL, Postgres, APIs, ORMs, Agile/Scrum.
             </StepDescription>
           </Step>
         </StepContainer>
         <StepContainer>
           <Step>
             <StepIcon>
-            <img src={DevOpsSkills} />
+              <img src={DevOpsSkills} />
             </StepIcon>
             <StepTitle>DevOps Engineer</StepTitle>
             <StepDescription>
-              AWS, Azure, Jenkins, GitHubActions, Docker, Kubernetes, Terraform, Ansible, Prometheus-Grafana, Bash, YAML, Nginix, Linux server.
+              Azure, AWS, Jenkins, GitHubActions, Docker, Kubernetes, Terraform,
+              Ansible, Prometheus, Grafana, Bash, YAML, Webservers, Linux.
             </StepDescription>
           </Step>
         </StepContainer>
         <StepContainer>
           <Step>
             <StepIcon>
-                <img src={EssentialSkills} />
+              <img src={EssentialSkills} />
             </StepIcon>
             <StepTitle>Essential Skills</StepTitle>
             <StepDescription>
-              Leadership, Critical Thinking, Communication & Collaboration, Lifelong Learning.
+              Leadership, Critical Thinking, Communication & Collaboration,
+              Lifelong Learning.
             </StepDescription>
           </Step>
         </StepContainer>
       </StepsContainer>
     </Container>
   );
-});
+};

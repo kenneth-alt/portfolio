@@ -1,13 +1,14 @@
-import React, { forwardRef } from "react";
-import styled, { keyframes } from "styled-components";
-import tw from "twin.macro";
+import React from 'react';
+import { useNavigationContext } from '../../context/NavigationContext';
+import styled, { keyframes } from 'styled-components';
+import tw from 'twin.macro';
 
-import TopSectionImg from "../../../assets/img/SuperCoder.png";
-import BlobImg from "../../../assets/img/blob.svg"
-import LinkedIn from "../../../assets/img/linkedin.png"
-import GitHub from "../../../assets/img/github.png"
-import Medium from "../../../assets/img/medium.png"
-import { SCREENS } from "../../components/responsive";
+import TopSectionImg from '../../../assets/img/SuperCoder.png';
+import BlobImg from '../../../assets/img/blob.svg';
+import LinkedIn from '../../../assets/img/linkedin.png';
+import GitHub from '../../../assets/img/github.png';
+import Medium from '../../../assets/img/medium.png';
+import { SCREENS } from '../../components/responsive';
 
 const bounceAnimation = keyframes`
   0% {
@@ -29,7 +30,6 @@ const bounceAnimation = keyframes`
     transform: translateY(0);
   }
 `;
-
 
 const TopSectionContainer = styled.div`
   min-height: 540px;
@@ -53,7 +53,7 @@ const LeftContainer = styled.div`
     flex-col
     justify-between
   `};
-  z-index: 9
+  z-index: 9;
 `;
 
 const RightContainer = styled.div`
@@ -110,7 +110,6 @@ const Description = styled.p`
   `};
 `;
 
-
 const SocialsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -130,7 +129,7 @@ const BlobContainer = styled.div`
   height: 10em;
   position: absolute;
   right: -5em;
-  top: -9em; 
+  top: -9em;
   transform: rotate(-30deg);
 
   img {
@@ -177,7 +176,6 @@ const SuperCoder = styled.div`
     animation: ${bounceAnimation} 15s infinite;
   }
 
-
   @media (min-width: ${SCREENS.sm}) {
     height: 16em;
     right: -6em;
@@ -197,22 +195,41 @@ const SuperCoder = styled.div`
   }
 `;
 
-
-export const TopSection = forwardRef<HTMLDivElement>((props, ref) => {
+export const TopSection = () => {
+  const { homeRef } = useNavigationContext();
   return (
-    <TopSectionContainer ref={ref}>
+    <TopSectionContainer ref={homeRef}>
       <LeftContainer>
         <div>
           <Greeting>Hi, I am</Greeting>
           <MyName>Kenneth Ugo</MyName>
           <Description>
-            Solution oriented <strong>Software Developer</strong> and <strong>DevOps Engineer</strong>
+            Solution oriented <strong>Software Developer</strong> and{' '}
+            <strong>DevOps Engineer</strong>
           </Description>
         </div>
         <SocialsContainer>
-          <a href="https://www.linkedin.com/in/kenneth-ugo" target="blank" rel="noopener noreferrer"><img src={LinkedIn} /></a>
-          <a href="https://github.com/kenneth-alt" target="blank" rel="noopener noreferrer"><img src={GitHub} /></a>
-          <a href="https://medium.com/@kenneth-alt" target="blank" rel="noopener noreferrer"><img src={Medium} /></a>
+          <a
+            href="https://www.linkedin.com/in/kenneth-ugo"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            <img src={LinkedIn} />
+          </a>
+          <a
+            href="https://github.com/kenneth-alt"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            <img src={GitHub} />
+          </a>
+          <a
+            href="https://medium.com/@kenneth-alt"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Medium} />
+          </a>
         </SocialsContainer>
       </LeftContainer>
       <RightContainer>
@@ -225,4 +242,4 @@ export const TopSection = forwardRef<HTMLDivElement>((props, ref) => {
       </RightContainer>
     </TopSectionContainer>
   );
-});
+};
