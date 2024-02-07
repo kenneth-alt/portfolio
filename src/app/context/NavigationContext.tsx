@@ -1,4 +1,4 @@
-import React, { createContext, useRef, ReactNode, useContext } from 'react';
+import React, { createContext, useContext, useRef, ReactNode } from 'react';
 
 interface NavigationContextType {
   homeRef: React.RefObject<HTMLDivElement>;
