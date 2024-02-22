@@ -202,10 +202,10 @@ export const TopSection = () => {
       <LeftContainer>
         <div>
           <Greeting>Hi, I am</Greeting>
-          <MyName>Kenneth Ugo</MyName>
+          <MyName>Kenneth</MyName>
           <Description>
             Solution oriented <strong>Software Developer</strong> and{' '}
-            <strong>DevOps Engineer</strong>
+            <strong>Cloud/Infrastructure & DevOps Engineer</strong>
           </Description>
         </div>
         <SocialsContainer>
