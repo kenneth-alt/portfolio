@@ -153,7 +153,7 @@ export const TopProjects = () => {
       'Project to extract and load data from on-prem SQL databases with ADF, transform in Databricks and load into Synapse analytics workspaces.',
     features: '',
     websiteLink: '#',
-    githubLink: 'https://github.com/kenneth-alt/calgary-aero-full-stack',
+    githubLink: 'https://github.com/kenneth-alt',
   };
 
   const sqlProject: IProject = {
@@ -297,7 +297,7 @@ export const TopProjects = () => {
       </ProjectsContainer>
 
       <ProjectsContainer>
-        Data Engineering
+        Data Engineering and MLOps
         <Carousel
           value={dataEngCurrent}
           onChange={setDataEngCurrent}
