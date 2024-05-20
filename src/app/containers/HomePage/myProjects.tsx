@@ -55,6 +55,7 @@ const DotsContainer = styled.div`
 export const TopProjects = () => {
   const [devCurrent, setDevCurrent] = useState(0);
   const [devopsCurrent, setDevopsCurrent] = useState(0);
+  const [dataEngCurrent, setDataEngCurrent] = useState(0);
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
@@ -145,6 +146,26 @@ export const TopProjects = () => {
     githubLink: 'https://github.com/kenneth-alt/calgary-aero-full-stack',
   };
 
+  const azureDataProj: IProject = {
+    imgSrc: 'https://i.postimg.cc/nrhb7rgZ/Azure-data-eng-proj.png',
+    name: 'Azure Data Project',
+    summary:
+      'Project to extract and load data from on-prem SQL databases with ADF, transform in Databricks and load into Synapse analytics workspaces.',
+    features: '',
+    websiteLink: '#',
+    githubLink: 'https://github.com/kenneth-alt/calgary-aero-full-stack',
+  };
+
+  const sqlProject: IProject = {
+    imgSrc: 'https://i.postimg.cc/YCzsMMhw/SQL-project.png',
+    name: 'SQL Project',
+    summary:
+      'Project to analyze job market data, utilizing complex SQL queries to extract insights from a large dataset',
+    features: '',
+    websiteLink: '#',
+    githubLink: 'https://github.com/kenneth-alt/sql_project',
+  };
+
   const devProjects = [
     <Project {...Clima} />,
     <Project {...WaitEase} />,
@@ -159,11 +180,20 @@ export const TopProjects = () => {
     <Project {...awsDeployment} />,
   ];
 
+  const dataEngProjects = [
+    <Project {...azureDataProj} />,
+    <Project {...sqlProject} />,
+  ];
+
   const numberOfDevDots = isMobile
     ? devProjects.length
     : Math.ceil(devProjects.length / 3);
 
   const numberOfDevopsDots = isMobile
+    ? devopsProjects.length
+    : Math.ceil(devopsProjects.length / 3);
+
+  const numberOfDataEngDots = isMobile
     ? devopsProjects.length
     : Math.ceil(devopsProjects.length / 3);
 
@@ -173,7 +203,7 @@ export const TopProjects = () => {
     <TopProjectsContainer ref={projectsRef}>
       <Title>Explore My Latest Projects</Title>
       <ProjectsContainer>
-        Software Development
+        Software Engineering and Systems Design
         <Carousel
           value={devCurrent}
           onChange={setDevCurrent}
@@ -262,6 +292,53 @@ export const TopProjects = () => {
             value={devopsCurrent}
             onChange={setDevopsCurrent}
             number={numberOfDevopsDots}
+          />
+        </DotsContainer>
+      </ProjectsContainer>
+
+      <ProjectsContainer>
+        Data Engineering
+        <Carousel
+          value={dataEngCurrent}
+          onChange={setDataEngCurrent}
+          slides={dataEngProjects}
+          plugins={[
+            'clickToChange',
+            {
+              resolve: slidesToShowPlugin,
+              options: {
+                numberOfSlides: 3,
+              },
+            },
+          ]}
+          breakpoints={{
+            640: {
+              plugins: [
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 1,
+                  },
+                },
+              ],
+            },
+            900: {
+              plugins: [
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 2,
+                  },
+                },
+              ],
+            },
+          }}
+        />
+        <DotsContainer>
+          <Dots
+            value={dataEngCurrent}
+            onChange={setDataEngCurrent}
+            number={numberOfDataEngDots}
           />
         </DotsContainer>
       </ProjectsContainer>

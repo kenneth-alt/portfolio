@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 
 import DevSkills from '../../../assets/img/web-development.png';
 import DevOpsSkills from '../../../assets/img/devopsSkill.png';
-import EssentialSkills from '../../../assets/img/essentialSkills.png';
+import DataEngSkills from '../../../assets/img/data-science.png';
 
 const Container = styled.div`
   ${tw`
@@ -110,10 +110,10 @@ export const SkillsSection = () => {
             <StepIcon>
               <img src={DevSkills} />
             </StepIcon>
-            <StepTitle>Developer</StepTitle>
+            <StepTitle>Software Engineering</StepTitle>
             <StepDescription>
-              JavaScript, React, Next.js, Express, Node.js, Nest.js, MongoDB,
-              Python, Flask, fastapi, MySQL, Postgres, APIs, ORMs, Agile/Scrum.
+              Python, JavaScript, Node.js/Express, Nest.js, TypeScript, React,
+              Next.js, MongoDB, MySQL, Postgres, APIs, ORMs, Agile/Scrum.
             </StepDescription>
           </Step>
         </StepContainer>
@@ -122,22 +122,24 @@ export const SkillsSection = () => {
             <StepIcon>
               <img src={DevOpsSkills} />
             </StepIcon>
-            <StepTitle>DevOps Engineer</StepTitle>
+            <StepTitle>DevOps/Infrastructure</StepTitle>
             <StepDescription>
-              Azure, AWS, Jenkins, GitHubActions, Docker, Kubernetes, Terraform,
-              Ansible, Prometheus, Grafana, Bash, YAML, Webservers, Linux.
+              GitOps, Azure, AWS, Jenkins, GitHubActions, Docker, Kubernetes,
+              Terraform, Ansible, Prometheus, Grafana, ELK, Bash, Webservers,
+              Linux.
             </StepDescription>
           </Step>
         </StepContainer>
         <StepContainer>
           <Step>
             <StepIcon>
-              <img src={EssentialSkills} />
+              <img src={DataEngSkills} />
             </StepIcon>
-            <StepTitle>Essential Skills</StepTitle>
+            <StepTitle>Data Engineering</StepTitle>
             <StepDescription>
-              Leadership, Critical Thinking, Communication & Collaboration,
-              Lifelong Learning.
+              ETL, ELT, SQL, T-SQL, Data Pipelines, Azure ADF, Databricks, &
+              Synapse, AWS S3, Redshift, Lambda, EMR & Glue, Airflow, Kafka,
+              Redis.
             </StepDescription>
           </Step>
         </StepContainer>

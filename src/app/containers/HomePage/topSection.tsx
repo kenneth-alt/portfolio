@@ -204,8 +204,8 @@ export const TopSection = () => {
           <Greeting>Hi, I am</Greeting>
           <MyName>Kenneth</MyName>
           <Description>
-            Solution oriented <strong>Software</strong>,{' '}
-            <strong>Cloud/DevOps</strong> Engineer.
+            Solution-oriented <strong>Cloud/DevOps</strong>{' '}
+            <strong>Software</strong> Engineer.
           </Description>
         </div>
         <SocialsContainer>
