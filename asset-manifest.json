@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.e65434ba.css",
-    "main.js": "/portfolio/static/js/main.a05ec6c7.js",
+    "main.js": "/portfolio/static/js/main.e336d6fa.js",
     "static/js/787.964c915a.chunk.js": "/portfolio/static/js/787.964c915a.chunk.js",
     "static/media/boy1.png": "/portfolio/static/media/boy1.cf9eee99bfae3a94938a.png",
     "static/media/devopsSkill.png": "/portfolio/static/media/devopsSkill.74bc309444d66b42649c.png",
-    "static/media/essentialSkills.png": "/portfolio/static/media/essentialSkills.105e74ba922c1157abf0.png",
+    "static/media/data-science.png": "/portfolio/static/media/data-science.97fa3f5adcabcee2e948.png",
     "static/media/SuperCoder.png": "/portfolio/static/media/SuperCoder.d2527eef7576d8c12235.png",
     "static/media/Gumela Regular.otf": "/portfolio/static/media/Gumela Regular.0ae83c6988a536716eb4.otf",
     "static/media/web-development.png": "/portfolio/static/media/web-development.d4039cd6bf2cf1c8026f.png",
     "index.html": "/portfolio/index.html",
     "static/media/blob.svg": "/portfolio/static/media/blob.f2195ec62f0748be8f89a49cc63bf8b9.svg",
     "main.e65434ba.css.map": "/portfolio/static/css/main.e65434ba.css.map",
-    "main.a05ec6c7.js.map": "/portfolio/static/js/main.a05ec6c7.js.map",
+    "main.e336d6fa.js.map": "/portfolio/static/js/main.e336d6fa.js.map",
     "787.964c915a.chunk.js.map": "/portfolio/static/js/787.964c915a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e65434ba.css",
-    "static/js/main.a05ec6c7.js"
+    "static/js/main.e336d6fa.js"
   ]
 }
