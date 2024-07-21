@@ -276,7 +276,7 @@ export const Footer = () => {
         </FormContainer>
         <BottomContainer>
           <CopyrightText>
-            © {new Date().getFullYear()} Kenneth Ugo.
+            © {new Date().getFullYear()} Kenneth-alt.
           </CopyrightText>
         </BottomContainer>
       </InnerContainer>
