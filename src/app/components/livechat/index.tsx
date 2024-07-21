@@ -23,8 +23,8 @@ const ChatButton = styled.img`
     fixed
     bottom-4
     right-4
-    w-12
-    h-12
+    w-10
+    h-10
     cursor-pointer
     z-50
   `}
@@ -61,7 +61,7 @@ const PopupCard = styled.div`
     fixed
     bottom-20
     right-4
-    w-60
+    w-40
     bg-white
     shadow-lg
     z-50
@@ -164,6 +164,7 @@ const PopupText = styled.p`
     mt-6
     mb-2
     text-gray-700
+    text-sm
   `}
 `;
 
