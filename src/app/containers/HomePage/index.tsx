@@ -10,6 +10,7 @@ import { SkillsSection } from './skillsSection';
 import { TopProjects } from './myProjects';
 import { BlogSection } from './blogSection';
 import { Footer } from '../../components/footer';
+import { LiveChat } from '../../components/livechat';
 
 const PageContainer = styled.div`
   ${tw`
@@ -36,6 +37,7 @@ export function HomePage() {
       <BlogSection />
       <Marginer direction="vertical" margin="4em" />
       <Footer />
+      <LiveChat />
     </PageContainer>
   );
 }

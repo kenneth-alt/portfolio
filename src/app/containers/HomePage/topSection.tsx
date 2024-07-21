@@ -35,7 +35,7 @@ const TopSectionContainer = styled.div`
   min-height: 540px;
   ${tw`
     w-full
-    max-w-screen-2xl
+    // max-w-screen-2xl
     flex
     justify-between
     pt-20
