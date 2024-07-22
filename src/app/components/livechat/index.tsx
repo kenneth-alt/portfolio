@@ -25,11 +25,14 @@ const ChatButton = styled.img`
     right-4
     w-10
     h-10
-    cursor-pointer
     z-50
   `}
   margin: 0;
   padding: 0;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 `;
 
 const ChatWindow = styled.div`
