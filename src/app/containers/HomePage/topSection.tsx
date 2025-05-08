@@ -210,7 +210,7 @@ export const TopSection = () => {
         </div>
         <SocialsContainer>
           <a
-            href="https://www.linkedin.com/in/kenneth-ugo"
+            href="https://www.linkedin.com/in/kenneth-alt"
             target="blank"
             rel="noopener noreferrer"
           >
